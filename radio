@@ -1,0 +1,28 @@
+<? Php
+// Votre RadioUID
+$ Radiouid = "3924460-ad30-4da7e28bd7";
+// Votre apikey
+$ Apikey = "fecfe-4e20-b58-57c816";
+// Inclusief Cover Art?
+$ Dekking = "yes"; // "Ja of nee"
+// Aantal resultaten te verkrijgen
+$ Amount = "50";
+// Type resultaat dat u wilt ontvangen
+$ Type = "xml"; // "Xml" of "string"
+
+/ * --------------------------------- * /
+/ * ####! NIET TE VERANDEREN! ! #### * /
+/ * --------------------------------- * /
+$ Cache = './cache_api.txt';
+
+$ Vervallen = time () - 310;
+if (file_exists ($ cache) &&filemtime ($ cache)> $ vervallen) {echo file_get_contents ($ cache);}
+anders{
+	$ Context = stream_context_create (array ( 'http' => array ( 'time-out' => 30)));
+	Raak ($ ​​cache);
+	$ Xml =file_get_contents ( 'http://api.radionomy.com/tracklist.cfm?radiouid='.$radiouid.' '(Isset ($ apikey) & apikey =' $ apikey:.?. ''). (isset ($ bedrag) & amount = '$ bedrag:?.' ') (isset ($ cover)? ". & dekking =' $ omslag:. '') (isset ($ type)" & type = '.?. soort $: ''), 0, $ context);
+	if ($ xml)
+    file_put_contents ($ cache, $ xml);
+	echo file_get_contents ($ cache);
+}
+?>
