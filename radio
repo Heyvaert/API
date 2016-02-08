@@ -1,8 +1,8 @@
 <? Php
 // Votre RadioUID
-$ Radiouid = "3924460-ad30-4da7e28bd7";
+$ Radiouid = "f17bbc4d-df4a-4ff9-baf3-9de8fc6a7b46";
 // Votre apikey
-$ Apikey = "fecfe-4e20-b58-57c816";
+$ Apikey = "d3a12610-5d06-4f47-a474-f7e630748ac7";
 // Inclusief Cover Art?
 $ Dekking = "yes"; // "Ja of nee"
 // Aantal resultaten te verkrijgen
